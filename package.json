@@ -2,11 +2,16 @@
   "name": "background-configs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:scripts": "npx webpack"
+    "build:scripts": "npm run lint && npx webpack",
+    "lint": "npx eslint ./src"
   },
   "devDependencies": {
+    "@eslint/js": "^9.9.0",
+    "@types/eslint__js": "^8.42.3",
+    "eslint": "^9.9.0",
     "ts-loader": "^9.5.1",
     "typescript": "^5.5.4",
+    "typescript-eslint": "^8.2.0",
     "webpack": "^5.94.0",
     "webpack-cli": "^5.1.4"
   }
