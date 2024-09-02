@@ -1,10 +1,10 @@
-import { Walmart } from '../../src/walmart/script';
+import { Walmart } from '../../../src/retailers/walmart/script';
 
 describe('Walmart', function () {
 
     describe('collectOrderDetails', function () {
         it('should return an expected value', async function () {
-            const result = await Walmart.collectOrderDetails();
+            const result = await Walmart.collectOrderDetails({value: 'abc'}, true);
 
             expect(result).toStrictEqual([
                 { orderId: '123' },

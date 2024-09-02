@@ -1,8 +1,16 @@
+import { StartData } from "../../utils/models/startdata";
+import { applyConverters } from "../../utils/decorators";
+import { CollectOrdersConverter, StartDataConverter } from "../../utils/converters";
+
 export class Walmart {
 
-    static async collectOrderDetails(): Promise<Order[]> {
+    @applyConverters([new StartDataConverter(), new CollectOrdersConverter()])
+    static async collectOrderDetails(startData: StartData, collectOrders: boolean): Promise<Order[]> {
         // To stop eslint from complaining there is no await
         await new Promise(resolve => setTimeout(resolve, 1000));
+
+        console.log(startData);
+        console.log(collectOrders);
 
         return [
             { orderId: "123" },

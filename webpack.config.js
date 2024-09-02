@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
     entry: {
-        walmart: './src/walmart/script.ts'
+        walmart: './src/retailers/walmart/script.ts'
     },
     mode: 'production',
     module: {
