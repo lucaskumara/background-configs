@@ -1,6 +1,7 @@
 import { StartData } from "../../utils/models/startdata";
 import { applyConverters } from "../../utils/decorators";
 import { CollectOrdersConverter, StartDataConverter } from "../../utils/converters";
+import { Logger } from "../../utils/logging";
 
 export class Walmart {
 
@@ -9,8 +10,8 @@ export class Walmart {
         // To stop eslint from complaining there is no await
         await new Promise(resolve => setTimeout(resolve, 1000));
 
-        console.log(startData);
-        console.log(collectOrders);
+        Logger.debug(JSON.stringify(startData));
+        Logger.debug(JSON.stringify(collectOrders));
 
         return [
             { orderId: "123" },
